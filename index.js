@@ -9,16 +9,18 @@ const buildname = process.env.BUILD_NAME;
 
 // Input capabilities
 const capabilities = {
-  'os_version' : '11',
- 'resolution' : '1920x1080',
- 'browserName' : 'Chrome',
- 'browser_version' : '96.0',
- 'os' : 'Windows',
+ 'os_version': '11',
+ 'resolution': '1920x1080',
+ 'browserName': 'Chrome',
+ 'browser_version': '96.0',
+ 'os': 'Windows',
  'name': 'BStack-[NodeJS] Sample Test', // test name
- 'build': buildname // CI/CD job or build name
+ 'build': buildname // CI/CD job or build name,
+ 'browserstack.user': user,
+ 'browserstack.key': key,
 }
 async function runTestWithCaps () {
-  let driver = new webdriver.Builder().usingServer(`https://username:key@hub-cloud.browserstack.com/wd/hub`).withCapabilities(capabilities).build();
+  let driver = new webdriver.Builder().usingServer("https://hub-cloud.browserstack.com/wd/hub").withCapabilities(capabilities).build();
   try{
     await driver.get("https://bstackdemo.com/");
     await driver.wait(webdriver.until.titleMatches(/StackDemo/i), 10000);
