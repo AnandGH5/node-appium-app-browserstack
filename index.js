@@ -15,7 +15,7 @@ const capabilities = {
  'browser_version': '96.0',
  'os': 'Windows',
  'name': 'BStack-[NodeJS] Sample Test', // test name
- 'build': buildname // CI/CD job or build name,
+ 'build': buildname, // CI/CD job or build name,
  'browserstack.user': user,
  'browserstack.key': key,
 }
