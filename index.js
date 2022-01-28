@@ -18,7 +18,7 @@ const capabilities = {
  'build': buildname // CI/CD job or build name
 }
 async function runTestWithCaps () {
-  let driver = new webdriver.Builder().usingServer(`https://minolivartak_7NMHef:7zERhse86fXgg5qz3cbr@hub-cloud.browserstack.com/wd/hub`).withCapabilities(capabilities).build();
+  let driver = new webdriver.Builder().usingServer(`https://username:key@hub-cloud.browserstack.com/wd/hub`).withCapabilities(capabilities).build();
   try{
     await driver.get("https://bstackdemo.com/");
     await driver.wait(webdriver.until.titleMatches(/StackDemo/i), 10000);
