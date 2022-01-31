@@ -5,7 +5,7 @@ const assert = require('assert');
 const user = process.env.BROWSERSTACK_USERNAME;
 const key = process.env.BROWSERSTACK_ACCESS_KEY;
 
-const buildname = process.env.BUILD_NAME;
+const buildname = process.env.GO_PIPELINE_LABEL;
 
 // Input capabilities
 const capabilities = {
